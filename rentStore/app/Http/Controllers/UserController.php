@@ -34,21 +34,21 @@ class UserController extends Controller
         $user = new User();
 
         if (!$request->name) {
-            return \response('Error: Name cannot be empty', 400, []);
+            return \response(['error' => 'Name cannot be empty'], 400, []);
         }
 
         if (!$request->email) {
-            return \response('Error: Email cannot be empty', 400, []);
+            return \response(['error' => 'Email cannot be empty'], 400, []);
         }
 
         if (!$request->password) {
-            return \response('Error: Password cannot be empty', 400, []);
+            return \response(['error' => 'Password cannot be empty'], 400, []);
         }
 
         $userInStore = User::firstWhere('email', $request->email);
 
         if ($userInStore) {
-            return \response('Error: Email has already been used', 400, []);
+            return \response(['error' => 'Email has already been used'], 400, []);
         }
 
         $user->name = $request->name;
@@ -64,11 +64,11 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return Response
+     * @return UserResource
      */
     public function show($id)
     {
-        //
+        return new UserResource(User::findOrFail($id));
     }
 
     /**
@@ -76,14 +76,14 @@ class UserController extends Controller
      *
      * @param Request $request
      * @param  int  $id
-     * @return UserResource
+     * @return UserResource|ResponseFactory|Response
      */
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
 
         if (!$request->name && !$request->email && !$request->password) {
-            return \response('Error: Please fill at least one of the fields', 400, []);
+            return \response(['error' => 'Please fill at least one of the fields'], 400, []);
         }
 
         if ($request->name) $user->name = $request->name;

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\BookCollection;
 use App\Http\Resources\Book as BookResource;
 use App\Book;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -25,14 +26,14 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return BookResource | bool
+     * @return BookResource|ResponseFactory|Response
      */
     public function store(Request $request)
     {
         $book = new Book();
 
         if (!$request->title) {
-            return \response('Error: Title cannot be empty', 400, []);
+            return \response(['error' => 'Title cannot be empty'], 400, []);
         }
 
         $book->title = $request->title;
@@ -40,14 +41,7 @@ class BookController extends Controller
         $bookInStore = Book::where('title', $request->title)->firstOrFail();
 
         if ($bookInStore) {
-            $countBookInStore = $bookInStore->unit;
-            $countBookInStore++;
-
-            $bookInStore->unit = $countBookInStore;
-            $bookInStore->update();
-
-            return new BookResource($bookInStore);
-
+            return \response(['error' => 'Book is already in the store'], 400, []);
         } else {
 
             $book->unit = 1;
