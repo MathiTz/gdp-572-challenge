@@ -38,12 +38,11 @@ class BookController extends Controller
 
         $book->title = $request->title;
 
-        $bookInStore = Book::where('title', $request->title)->firstOrFail();
+        $bookInStore = Book::where('title', $request->title)->first();
 
         if ($bookInStore) {
             return \response(['error' => 'Book is already in the store'], 400, []);
         } else {
-
             $book->unit = 1;
             $book->save();
             return new BookResource($book);
@@ -67,11 +66,13 @@ class BookController extends Controller
      *
      * @param Request $request
      * @param  int  $id
-     * @return BookResource
+     * @return BookResource|ResponseFactory|Response
      */
     public function update(Request $request, $id)
     {
-        $book = Book::findOrFail($id);
+        $book = Book::find($id);
+
+        if (!$book) return \response(['error' => "Book doesn't exist"], 400, []);
 
         if ($request->title) $book->title = $request->title;
 

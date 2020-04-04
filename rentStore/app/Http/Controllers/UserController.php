@@ -68,7 +68,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        return new UserResource(User::findOrFail($id));
+        return new UserResource(User::find($id));
     }
 
     /**
@@ -80,7 +80,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
+
+        if (!$user) return \response(['error' => "User doesn't exist"], 400, []);
 
         if (!$request->name && !$request->email && !$request->password) {
             return \response(['error' => 'Please fill at least one of the fields'], 400, []);
@@ -99,11 +101,13 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return UserResource
+     * @return UserResource|ResponseFactory|Response
      */
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::find($id);
+
+        if (!$user) return \response(['error' => "User doesn't exist"], 400, []);
 
         $user->delete();
 
