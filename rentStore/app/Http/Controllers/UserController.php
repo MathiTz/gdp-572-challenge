@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Resources\UserCollection;
 use App\Http\Resources\User as UserResource;
 use App\User;
+use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Hash;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UserController extends Controller
 {
@@ -25,11 +27,29 @@ class UserController extends Controller
      * Store a newly created resource in storage.
      *
      * @param Request $request
-     * @return UserResource
+     * @return UserResource|array|ResponseFactory|Response
      */
     public function store(Request $request)
     {
         $user = new User();
+
+        if (!$request->name) {
+            return \response('Error: Name cannot be empty', 400, []);
+        }
+
+        if (!$request->email) {
+            return \response('Error: Email cannot be empty', 400, []);
+        }
+
+        if (!$request->password) {
+            return \response('Error: Password cannot be empty', 400, []);
+        }
+
+        $userInStore = User::firstWhere('email', $request->email);
+
+        if ($userInStore) {
+            return \response('Error: Email has already been used', 400, []);
+        }
 
         $user->name = $request->name;
         $user->email = $request->email;
@@ -62,9 +82,13 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $user->name = $request->name;
-        $user->email = $request->email;
-        $user->password = $request->password;
+        if (!$request->name && !$request->email && !$request->password) {
+            return \response('Error: Please fill at least one of the fields', 400, []);
+        }
+
+        if ($request->name) $user->name = $request->name;
+        if ($request->email) $user->email = $request->email;
+        if ($request->password) $user->password = $request->password;
 
         $user->update();
 

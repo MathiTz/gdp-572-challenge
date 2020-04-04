@@ -30,18 +30,23 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $book = new Book();
+
+        if (!$request->title) {
+            return \response('Error: Title cannot be empty', 400, []);
+        }
+
         $book->title = $request->title;
 
         $bookInStore = Book::where('title', $request->title)->firstOrFail();
 
         if ($bookInStore) {
-          $countBookInStore = $bookInStore->unit;
-          $countBookInStore++;
+            $countBookInStore = $bookInStore->unit;
+            $countBookInStore++;
 
-          $bookInStore->unit = $countBookInStore;
-          $bookInStore->update();
+            $bookInStore->unit = $countBookInStore;
+            $bookInStore->update();
 
-          return new BookResource($bookInStore);
+            return new BookResource($bookInStore);
 
         } else {
 
@@ -74,8 +79,12 @@ class BookController extends Controller
     {
         $book = Book::findOrFail($id);
 
-        $book->title = $request->title;
-        $book->unit = $book->unit++;
+        if ($request->title) $book->title = $request->title;
+
+        $bookCount = $book->unit;
+        $bookCount++;
+
+        $book->unit = $bookCount;
 
         $book->update();
 
