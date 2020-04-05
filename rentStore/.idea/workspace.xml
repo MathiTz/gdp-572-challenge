@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5de1b909-08b9-476a-b496-77365f4e372f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentedBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentedBookController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +141,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="COPY_ALWAYS" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -168,7 +166,7 @@
       <updated>1586012977415</updated>
       <workItem from="1586012980108" duration="8087000" />
       <workItem from="1586023218532" duration="7199000" />
-      <workItem from="1586042728432" duration="1032000" />
+      <workItem from="1586042728432" duration="11559000" />
     </task>
     <servers />
   </component>
@@ -180,14 +178,14 @@
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="492" y="68" width="431" height="657" key="#com.intellij.ide.util.MemberChooser/59.27.1307.741@59.27.1307.741" timestamp="1586014238497" />
-    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586023481513">
+    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586044986394">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/59.27.1307.741@59.27.1307.741" timestamp="1586023481513" />
-    <state x="239" y="31" key="SettingsEditor" timestamp="1586024689909">
+    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/59.27.1307.741@59.27.1307.741" timestamp="1586044986394" />
+    <state x="239" y="31" key="SettingsEditor" timestamp="1586050122394">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="239" y="31" key="SettingsEditor/59.27.1307.741@59.27.1307.741" timestamp="1586024689909" />
+    <state x="239" y="31" key="SettingsEditor/59.27.1307.741@59.27.1307.741" timestamp="1586050122394" />
     <state x="338" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586042728410">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
