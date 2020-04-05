@@ -1,41 +1,302 @@
+<h2> Welcome to Atlantico's Library! </h2>
 
-![](https://lh3.googleusercontent.com/-SjJCP2AntwI/XoYRxI-hBjI/AAAAAAAABA4/bFi0th7AKGgQFVIOB8L-GiWSZriYhI6MgCK8BGAsYHg/s0/2020-04-02.png)
-# Instituto Atlântico PHP Developer Challenge
+<p>
+    Here you can find some books to rent with promotional price! 
+</p>
 
-Hi! this is a simple challenge for the **#GDP-572** job position at Instituto Atlântico. This challenge consists of creating a simple REST API. You can use any framework, lib and database you desire, just make sure to show some of your core PHP and SQL skills! To start, simply **fork** this repository, and when you're done, submit a Pull Request for us to review your code.
+<p>
+    Here we have the following routes
+</p>
+<ul>
+    <li>
+        <b>Login</b>
+    </li>
+    <li>
+        <b>User</b>
+    </li>
+    <li>
+        <b>Books</b>
+    </li>
+    <li>
+        <b>Rent Books</b>
+    </li>
+</ul>
+<h2> To start the application you have to take some steps </h2>
+<ul>
+    <li>
+        <p>Make a copy of .env.example and renamed to .env</p>
+    </li>
+    <li>
+        <p>Set DB_* variables according to your database
+       </p>
+       <h4>Note: you have to create a table with same name that you set on you DB_DATABASE</h4>
+    </li>
+    <li>
+        <p>Run - php artisan jwt:secret - to set env jwt secret or you can access .env and set JWT_SECRET with your own secret</p>
+    </li>
+    <li>
+        <p>Run - sudo composer install - to install the dependencies</p>
+    </li>
+    <li>
+        <p>And run -php artisan serve - </p>
+    </li>
+    <li>
+        <p>Just make sure you have made through all the steps</p>
+    </li>
+</ul>
+<h2>Now let's start:</h2>
+<h3>
+    Let's start with <b>Login</b>
+</h3>
+<ul>
+    <li>
+        <h3>'api/login' - POST</h3>
+        <p>You have to enter the following JSON body:</p>
+        <h4>
+            {
+                "username":"",
+                "password":""
+            }
+        </h4>
+        <p>The response is going to be:</p>
+        <h4>
+            {
+              "access_token": "",
+              "token_type": "",
+              "expires_in": 
+            }
+        </h4>
+        <p>From now on you'll have to use the token on your header on Authorization field:</p>
+        <h4>Authorization: Bearer $token</h4>
+    </li>
+</ul>
+<h4>Note: now you have to use auth after "api/", so all routes from now on, are going to be 'api/auth/'</h4>
 
-### API Description
+<h3>
+    Next one is <b>User</b>
+</h3>
+<ul>
+    <li>
+        <h3>'user' - GET (Code: 200)</h3>
+        <p>Retrieves all users:</p>
+        <h4>
+            {
+              "data": [
+                {
+                  "id": 1,
+                  "name": "Admin",
+                  "email": "admin@atlantico.com"
+                }
+              ]
+            }
+        </h4>
+        <h3>'user' - POST (Code: 201)</h3>
+        <p>Create new User:</p>
+        <p>Body:</p>
+        <h4>
+            {
+            	"name":"",
+            	"email":"",
+            	"password":""
+            }
+        </h4>
+        <h4>Note: email field has to be unique.</h4>
+        <p>Response:</p>
+        <h4>
+           {
+             "data": {
+               "id": 2,
+               "name": "Matheus",
+               "email": "matheusalves789@outlook.com"
+             }
+           }
+        </h4>
+        <h3>'user/$id' - PUT (Code: 200)</h3>
+        <p>Update User:</p>
+        <p>Body:</p>
+        <h4>
+            {
+                "name":"",
+                "email":"",
+                "password":""
+            }
+        </h4>
+        <h4>Note: you can update every field or only one.</h4>
+        <p>Response:</p>
+        <h4>
+           {
+             "data": {
+               "id": 3,
+               "name": "Matt",
+               "email": "matheusalves789@outlook.com"
+             }
+           }
+        </h4>
+        <h3>'user/$id' - DELETE (Code: 200)</h3>
+        <p>Delete User:</p>
+        <h4>
+           {
+             "data": {
+               "id": 3,
+               "name": "Matt",
+               "email": "matheusalves789@outlook.com"
+             }
+           }
+        </h4>
+    </li>
+</ul>
 
-In this challenge you will create an API for a library with these conditions:
-
-* **Login and Logout:** Authentication
-
-  _Create routes for session handling with JSON Web Tokens._
-  
-* **Books:** Entity
-
-  _Routes for creating, editing, listing and deleting books. Books must have a Title and an unit count for how many copies exist in the library._
-  
-* **Users:** Entity
-
-  _Routes for creating, editing, listing and deleting users. Keep it simple: Give them a name, email and password._
-  
-* **Book Rents:** Relationship
-
-  _Users will be able to rent books. The API must be able to associate rented books to users, date of rent, the payment value, status(the rent can be ongoing, late or paid) and the rent expiration date. The API must also be able to list all ongoing book rents, and must have routes for the user to deliver the book and set rent status to paid. Also remember that books have limited copies! If there are no more copies of a book, an user cannot rent it until another user delivers a copy of that book._
-  
-### Some observations and tips
-
-* Make sure to write a nice README telling us a bit about your code, like what libs or frameworks you used.
-* The README must also include instructions to run your code.
-* You will be evaluted for: code writing, patterns, structure, readibility, size and elegance (among other things).
-* Your ability to write and document consistent code in english will also be evaluated.
-* Push your code even if you do not meet all the requirements. We are looking to see if you are capable of learning new things and how you work, any effort will count.
-* Feel free to make any changes or add something to the challenge, just remember to tell us about it in the README.
-* Consider how you will manage dependencies in your application. _Tip: use [Composer](https://getcomposer.org/)_
-* Unit Tests will be a big bonus.
-* Virtualization is not mandatory, but will be a bonus. At Atlântico, we often use [Docker](https://www.docker.com/), and you can use [Docker Toolbox](https://docs.docker.com/toolbox/overview/) if your computer does not meet the requirements for Docker Desktop.
-*  Hosting is not mandatory for this challenge and you will not be penalized, but it will be a bonus. There are some free hosting services like [Heroku](https://www.heroku.com/free).
-
-
-**Good Luck!**
+<h3>
+    Next one is <b>Book</b>
+</h3>
+<ul>
+    <li>
+        <h3>'book' - GET (Code: 200)</h3>
+        <p>Retrieves all books:</p>
+        <p>Response:</p>
+        <h4>
+            {
+              "data": [
+                {
+                  "id": 1,
+                  "title": "Theory of everything",
+                  "count": 1
+                },
+                {
+                  "id": 2,
+                  "title": "Clean Code",
+                  "count": 1
+                }
+              ]
+            }
+        </h4>
+        <h3>'book' - POST (Code: 201)</h3>
+        <p>Create new Book:</p>
+        <p>Body:</p>
+        <h4>
+            {
+                "title": ""
+            }
+        </h4>
+        <h4>Note: title field has to be unique.</h4>
+        <p>Response:</p>
+        <h4>
+           {
+             "data": {
+               "id": 3,
+               "title": "JavaScript for dummies",
+               "count": 1
+             }
+           }
+        </h4>
+        <h3>'book/$id' - PUT (Code: 200)</h3>
+        <p>Update Book:</p>
+        <p>Body:</p>
+        <h4>
+            {
+                "title": ""
+            }
+        </h4>
+        <h4>Note: you can update the title or just add one more copy.</h4>
+        <h4>
+           {
+             "data": {
+               "id": 3,
+               "title": "JavaScript for dummies",
+               "count": 2
+             }
+           }
+           <b>OR</b>
+           {
+             "data": {
+               "id": 3,
+               "title": "JS for dummies",
+               "count": 3
+             }
+           }
+        </h4>
+        <h3>'book/$id' - DELETE (Code: 200)</h3>
+        <p>Delete Book:</p>
+        <h4>
+           {
+             "data": {
+               "id": 3,
+               "title": "JS for dummies",
+               "count": 3
+             }
+           }
+        </h4>
+    </li>
+</ul>
+<h3>
+    Last but no least: <b>Rent Books</b>
+</h3>
+<ul>
+    <li>
+        <h3>'rented_books' - GET (Code: 200)</h3>
+        <p>Retrieves all rented books:</p>
+        <p>Response:</p>
+        <h4>
+            {
+              "data": [
+                {
+                  "id": 2,
+                  "user_id": 1,
+                  "book_id": 1,
+                  "payment_value": "R$ 4,50",
+                  "rent_expiration_date": "2020-04-08",
+                  "status": "paid"
+                },
+                {
+                  "id": 3,
+                  "user_id": 1,
+                  "book_id": 1,
+                  "payment_value": "R$ 4,50",
+                  "rent_expiration_date": "2020-04-08",
+                  "status": "paid"
+                }
+              ]
+            }
+        </h4>
+        <h3>'rented_books' - POST (Code: 201)</h3>
+        <p>Create new Rent for a book:</p>
+        <p>Body:</p>
+        <h4>
+            {
+            	"book_id":"1",
+            	"user_id":"1",
+            	"payment_value":"4,50"
+            }
+        </h4>
+        <h4>Note: if you don't pass any payment_value, the default is 3,50. The default value for rent_expiration_date is 3 days.</h4>
+        <p>Response:</p>
+        <h4>
+           {
+             "data": {
+               "id": 4,
+               "user_id": "1",
+               "book_id": "1",
+               "payment_value": "R$ 4,50",
+               "rent_expiration_date": {
+                 "date": "2020-04-08 18:35:52.715283",
+                 "timezone_type": 3,
+                 "timezone": "UTC"
+               },
+               "status": "ongoing"
+             }
+           }
+        </h4>
+        <h3>'book/$id' - PUT (Code: 200)</h3>
+        <p>Update Book:</p>
+        <p>Body:</p>
+        <h4>
+            * No body needed *
+        </h4>
+        <h4>Note: you are just paying the book.</h4>
+        <h4>
+           {
+             "success": "Paid the rent successfully"
+           }
+        </h4>
+    </li>
+</ul>
