@@ -31,5 +31,6 @@ Route::group([
     Route::post('me', 'AuthController@me');
     Route::resource('user', 'UserController');
     Route::resource('book', 'BookController');
+    Route::resource('rented_books', 'RentedBookController');
 
 });
