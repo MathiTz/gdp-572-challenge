@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5de1b909-08b9-476a-b496-77365f4e372f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.env.testing" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RentedBookController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RentedBookController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,11 +151,70 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
+  <component name="RunManager" selected="PHPUnit.UserTest.testGetUsers">
+    <configuration name="LoginTest.testLogin" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\LoginTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/LoginTest.php" method="testLogin" scope="Method" />
       <method v="2" />
     </configuration>
+    <configuration name="UserTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testGetAllUsers" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="testGetAllUsers" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testGetUsers" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="testGetUsers" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UserTest.testUserObject" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="testUserObject" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.2" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml" scope="XML" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.UserTest.testGetUsers" />
+        <item itemvalue="PHPUnit.LoginTest.testLogin" />
+        <item itemvalue="PHPUnit.UserTest.testUserObject" />
+        <item itemvalue="PHPUnit.UserTest.testGetAllUsers" />
+        <item itemvalue="PHPUnit.UserTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -169,6 +229,7 @@
       <workItem from="1586012980108" duration="8087000" />
       <workItem from="1586023218532" duration="7199000" />
       <workItem from="1586042728432" duration="11559000" />
+      <workItem from="1586096509083" duration="2539000" />
     </task>
     <servers />
   </component>
@@ -176,21 +237,61 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="286" y="27" width="857" height="741" key="#LoginTest.testLogin" timestamp="1586098058459">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="27" width="857" height="741" key="#LoginTest.testLogin/59.27.1307.741@59.27.1307.741" timestamp="1586098058459" />
+    <state x="286" y="27" width="857" height="741" key="#UserTest" timestamp="1586097396311">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testGetAllUsers" timestamp="1586097511921">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testGetAllUsers/59.27.1307.741@59.27.1307.741" timestamp="1586097511921" />
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testGetUsers" timestamp="1586098391968">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testGetUsers/59.27.1307.741@59.27.1307.741" timestamp="1586098391968" />
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testUserObject" timestamp="1586097767496">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="27" width="857" height="741" key="#UserTest.testUserObject/59.27.1307.741@59.27.1307.741" timestamp="1586097767496" />
+    <state x="286" y="27" width="857" height="741" key="#UserTest/59.27.1307.741@59.27.1307.741" timestamp="1586097396311" />
     <state x="492" y="68" width="431" height="657" key="#com.intellij.ide.util.MemberChooser" timestamp="1586014238497">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="492" y="68" width="431" height="657" key="#com.intellij.ide.util.MemberChooser/59.27.1307.741@59.27.1307.741" timestamp="1586014238497" />
-    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586044986394">
+    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1586097383095">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/59.27.1307.741@59.27.1307.741" timestamp="1586044986394" />
+    <state x="445" y="154" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/59.27.1307.741@59.27.1307.741" timestamp="1586097383095" />
+    <state x="286" y="40" width="843" height="713" key="#phpunit.xml" timestamp="1586097481759">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state x="286" y="40" width="843" height="713" key="#phpunit.xml/59.27.1307.741@59.27.1307.741" timestamp="1586097481759" />
+    <state width="1261" height="152" key="GridCell.Tab.0.bottom" timestamp="1586099031233">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="152" key="GridCell.Tab.0.bottom/59.27.1307.741@59.27.1307.741" timestamp="1586099031233" />
+    <state width="1261" height="152" key="GridCell.Tab.0.center" timestamp="1586099031231">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="152" key="GridCell.Tab.0.center/59.27.1307.741@59.27.1307.741" timestamp="1586099031231" />
+    <state width="1261" height="152" key="GridCell.Tab.0.left" timestamp="1586099031230">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="152" key="GridCell.Tab.0.left/59.27.1307.741@59.27.1307.741" timestamp="1586099031230" />
+    <state width="1261" height="152" key="GridCell.Tab.0.right" timestamp="1586099031232">
+      <screen x="59" y="27" width="1307" height="741" />
+    </state>
+    <state width="1261" height="152" key="GridCell.Tab.0.right/59.27.1307.741@59.27.1307.741" timestamp="1586099031232" />
     <state x="239" y="31" key="SettingsEditor" timestamp="1586050122394">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
     <state x="239" y="31" key="SettingsEditor/59.27.1307.741@59.27.1307.741" timestamp="1586050122394" />
-    <state x="338" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586042728410">
+    <state x="338" y="224" key="com.intellij.ide.util.TipDialog" timestamp="1586096529459">
       <screen x="59" y="27" width="1307" height="741" />
     </state>
-    <state x="338" y="224" key="com.intellij.ide.util.TipDialog/59.27.1307.741@59.27.1307.741" timestamp="1586042728410" />
+    <state x="338" y="224" key="com.intellij.ide.util.TipDialog/59.27.1307.741@59.27.1307.741" timestamp="1586096529459" />
   </component>
 </project>

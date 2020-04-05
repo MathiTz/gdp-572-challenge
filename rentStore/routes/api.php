@@ -18,19 +18,13 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-Route::group([
+Route::post('login', 'AuthController@login');
 
-    'middleware' => 'api',
-    'prefix' => 'auth'
-
-], function ($router) {
-
-    Route::post('login', 'AuthController@login');
+Route::middleware('auth:api')->prefix('auth')->group(function () {
     Route::post('logout', 'AuthController@logout');
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
     Route::resource('user', 'UserController');
     Route::resource('book', 'BookController');
     Route::resource('rented_books', 'RentedBookController');
-
 });
