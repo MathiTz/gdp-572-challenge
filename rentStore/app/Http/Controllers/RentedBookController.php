@@ -115,7 +115,7 @@ class RentedBookController extends Controller
 
         $rent->update();
 
-        return \response(['success' => "Paid the rent successfully"], 201, []);
+        return \response(['success' => "Paid the rent successfully"], 200, []);
     }
 
     /**
