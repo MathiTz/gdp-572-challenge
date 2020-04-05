@@ -24,6 +24,16 @@ class AuthController extends Controller
     }
 
     /**
+     * Get a JWT via given credentials.
+     *
+     * @return JsonResponse
+     */
+    public function unauthorized()
+    {
+        return response()->json(['error' => 'Unauthorized'], 401);
+    }
+
+    /**
      * Get the authenticated User.
      *
      * @return JsonResponse
