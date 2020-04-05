@@ -61,7 +61,7 @@ class RentedBookController extends Controller
         $interval = new \DateInterval('P3D');
         $date->add($interval);
 
-        $rent->rent_expiration_date = $date->format('d-m-Y');
+        $rent->rent_expiration_date = $date;
 
         $rent->status = 'ongoing';
 
@@ -101,9 +101,8 @@ class RentedBookController extends Controller
 
         if ($rent->status === 'paid') return \response(['error' => "The book has already been paid"], 406, []);
 
-        if (!$request->book_id) return \response(['error' => "Couldn't find the book"], 400, []);
+        $book = Book::find($rent->book_id, 'id')->first();
 
-        $book = Book::find($request->book_id, 'id')->first();
         $countPlusBook = $book->unit;
         $countPlusBook++;
 
