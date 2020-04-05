@@ -100,6 +100,6 @@ class BookController extends Controller
 
         $book->delete();
 
-        return new BookResource($book);
+        return \response(['success' => "Book deleted"], 200, []);
     }
 }

@@ -112,6 +112,6 @@ class UserController extends Controller
 
         $user->delete();
 
-        return new UserResource($user);
+        return \response(['success' => "User deleted"], 200, []);
     }
 }

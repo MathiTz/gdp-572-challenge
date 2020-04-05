@@ -29,13 +29,20 @@
     <li>
         <p>Set DB_* variables according to your database
        </p>
-       <h4>Note: you have to create a table with same name that you set on you DB_DATABASE</h4>
+       <h4>Note: you have to create a database with same name that you set on you DB_DATABASE</h4>
     </li>
     <li>
         <p>Run - php artisan jwt:secret - to set env jwt secret or you can access .env and set JWT_SECRET with your own secret</p>
     </li>
     <li>
         <p>Run - sudo composer install - to install the dependencies</p>
+    </li>
+    <li>
+        <p>Run - php artisan migrate - to create all the tables</p>
+    </li>
+    <li>
+        <p>Run - php artisan db:seed - to create an admin for your application</p>
+        <p>Email: admin@atlantico.com, password: 123456</p>
     </li>
     <li>
         <p>And run -php artisan serve - </p>
