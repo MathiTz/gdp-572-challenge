@@ -61,8 +61,8 @@
         <p>You have to enter the following JSON body:</p>
         <h4>
             {
-                "username":"",
-                "password":""
+                "username":"admin@atlantico.com",
+                "password":"123456"
             }
         </h4>
         <p>The response is going to be:</p>
@@ -102,9 +102,9 @@
         <p>Body:</p>
         <h4>
             {
-            	"name":"",
-            	"email":"",
-            	"password":""
+            	"name": "Matheus",
+                "email": "matheusalves789@outlook.com",
+            	"password": "123456"
             }
         </h4>
         <h4>Note: email field has to be unique.</h4>
@@ -123,8 +123,8 @@
         <p>Body:</p>
         <h4>
             {
-                "name":"",
-                "email":"",
+                "name": "Matt",
+                "email": ""
                 "password":""
             }
         </h4>
@@ -182,7 +182,7 @@
         <p>Body:</p>
         <h4>
             {
-                "title": ""
+                "title": "JavaScript for dummies"
             }
         </h4>
         <h4>Note: title field has to be unique.</h4>
@@ -201,7 +201,7 @@
         <p>Body:</p>
         <h4>
             {
-                "title": ""
+                "title": "" OR "title":"JS for dummies"
             }
         </h4>
         <h4>Note: you can update the title or just add one more copy.</h4>
