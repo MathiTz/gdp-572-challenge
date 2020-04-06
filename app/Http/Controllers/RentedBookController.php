@@ -146,6 +146,11 @@ class RentedBookController extends Controller
         $rent = RentedBook::where('id', $id)->first();
 
         /**
+         * Checking if exist rent
+         */
+        if (!$rent) return \response(['error' => "The rent doesn't exist"], 400, []);
+
+        /**
          * Checking if rent's already paid
          */
         if ($rent->status === 'paid') return \response(['error' => "The book has already been paid"], 406, []);
