@@ -285,8 +285,8 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT</h3>
-        <p>Update Book:</p>
+        <h3>'rented_books/$id' - PUT</h3>
+        <p>Update Rent of the book:</p>
         <p>Body:</p>
         <h4>
             * No body needed *
