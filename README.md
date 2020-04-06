@@ -239,20 +239,12 @@
             {
               "data": [
                 {
-                  "id": 2,
-                  "user_id": 1,
-                  "book_id": 1,
-                  "payment_value": "R$ 4,50",
-                  "rent_expiration_date": "2020-04-08",
-                  "status": "paid"
-                },
-                {
-                  "id": 3,
-                  "user_id": 1,
-                  "book_id": 1,
-                  "payment_value": "R$ 4,50",
-                  "rent_expiration_date": "2020-04-08",
-                  "status": "paid"
+                  "id": 4,
+                  "user_id": 3,
+                  "book_id": 3,
+                  "payment_value": "R$ 3,50",
+                  "rent_expiration_date": "2020-04-09",
+                  "status": "ongoing"
                 }
               ]
             }
@@ -267,7 +259,7 @@
             	"payment_value":"4,50"
             }
         </h4>
-        <h4>Note: if you don't pass any payment_value, the default is 3,50. The default value for rent_expiration_date is 3 days.</h4>
+        <h4>Note: if you don't pass any payment_value, the default is 3,50. The default value for rent_expiration_date is 3 days. And if the book has no copies, you won't get the book.</h4>
         <p>Response:</p>
         <h4>
            {
