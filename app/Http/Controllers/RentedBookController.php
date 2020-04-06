@@ -6,6 +6,7 @@ use App\Book;
 use App\Http\Resources\RentedBook as RentedBookResource;
 use App\Http\Resources\RentedBookCollection;
 use App\RentedBook;
+use App\User;
 use Exception;
 use Illuminate\Contracts\Routing\ResponseFactory;
 use Illuminate\Http\Request;
@@ -20,7 +21,7 @@ class RentedBookController extends Controller
      */
     public function index()
     {
-        return new RentedBookCollection(RentedBook::all());
+        return new RentedBookCollection(RentedBook::where('status', 'ongoing')->get());
     }
 
     /**
@@ -42,7 +43,13 @@ class RentedBookController extends Controller
 
         $rent->user_id = $request->user_id;
 
-        $book = Book::find($request->book_id, 'id')->first();
+        $book = Book::where('id', $request->book_id)->first();
+
+        if (!$book) return \response(['error' => "Book doesn't exist"], 400, []);
+
+        $user = User::where('id', $request->user_id)->first();
+
+        if (!$user) return \response(['error' => "User doesn't exist"], 400, []);
 
         if ($book->unit == 0) {
             return \response(['error' => "There're no copies left"], 400, []);

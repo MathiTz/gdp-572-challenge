@@ -24,7 +24,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Get a JWT via given credentials.
+     *
      *
      * @return JsonResponse
      */
