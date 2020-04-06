@@ -1,5 +1,7 @@
 <h2> Welcome to Atlantico's Library! </h2>
 
+<p> This application runs on PHP 7.2.5 with MySQL with the usage of Laravel Framework 7.0 <p>
+
 <p>
     Here you can find some books to rent with promotional price! 
 </p>
