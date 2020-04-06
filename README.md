@@ -24,6 +24,9 @@
 <h2> To start the application you have to take some steps </h2>
 <ul>
     <li>
+        <p>Run - sudo composer install - to install the dependencies</p>
+    </li>
+    <li>
         <p>Make a copy of .env.example and renamed to .env</p>
     </li>
     <li>
@@ -33,9 +36,6 @@
     </li>
     <li>
         <p>Run - php artisan jwt:secret - to set env jwt secret or you can access .env and set JWT_SECRET with your own secret</p>
-    </li>
-    <li>
-        <p>Run - sudo composer install - to install the dependencies</p>
     </li>
     <li>
         <p>Run - php artisan migrate - to create all the tables</p>
