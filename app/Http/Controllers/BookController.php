@@ -32,6 +32,9 @@ class BookController extends Controller
     {
         $book = new Book();
 
+        /**
+         * Check if has title
+         */
         if (!$request->title) {
             return \response(['error' => 'Title cannot be empty'], 400, []);
         }
@@ -40,6 +43,9 @@ class BookController extends Controller
 
         $bookInStore = Book::where('title', $request->title)->first();
 
+        /**
+         * Check if there're any book with the same title or not
+         */
         if ($bookInStore) {
             return \response(['error' => 'Book is already in the store'], 400, []);
         } else {
@@ -72,8 +78,14 @@ class BookController extends Controller
     {
         $book = Book::find($id);
 
+        /**
+         * Check if the book exists
+         */
         if (!$book) return \response(['error' => "Book doesn't exist"], 400, []);
 
+        /**
+         * Check if there's a title on the body request
+         */
         if ($request->title) $book->title = $request->title;
 
         $bookCount = $book->unit;
@@ -96,6 +108,9 @@ class BookController extends Controller
     {
         $book = Book::where('id', $id)->first();
 
+        /**
+         * Check if the book exists
+         */
         if (!$book) return \response(['error' => "Book doesn't exist"], 400, []);
 
         $book->delete();

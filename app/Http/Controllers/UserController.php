@@ -34,20 +34,32 @@ class UserController extends Controller
     {
         $user = new User();
 
+        /**
+         * Check if have name on request
+         */
         if (!$request->name) {
             return \response(['error' => 'Name cannot be empty'], 400, []);
         }
 
+        /**
+         * Check if have email on request
+         */
         if (!$request->email) {
             return \response(['error' => 'Email cannot be empty'], 400, []);
         }
 
+        /**
+         * Check if have password on request
+         */
         if (!$request->password) {
             return \response(['error' => 'Password cannot be empty'], 400, []);
         }
 
         $userInStore = User::firstWhere('email', $request->email);
 
+        /**
+         * Check if have any user with the same email
+         */
         if ($userInStore) {
             return \response(['error' => 'Email has already been used'], 400, []);
         }
@@ -83,8 +95,14 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
+        /**
+         * Check if user exists
+         */
         if (!$user) return \response(['error' => "User doesn't exist"], 400, []);
 
+        /**
+         * Check parameters to update
+         */
         if (!$request->name && !$request->email && !$request->password) {
             return \response(['error' => 'Please fill at least one of the fields'], 400, []);
         }
@@ -108,6 +126,9 @@ class UserController extends Controller
     {
         $user = User::find($id);
 
+        /**
+         * Check if user exists
+         */
         if (!$user) return \response(['error' => "User doesn't exist"], 400, []);
 
         $user->delete();
