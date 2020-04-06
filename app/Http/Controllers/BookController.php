@@ -86,8 +86,34 @@ class BookController extends Controller
         /**
          * Check if there's a title on the body request
          */
-        if ($request->title) $book->title = $request->title;
+        if ($request->title) {
+            /**
+             * Searching for book
+             */
+            $book = Book::where('title', $request->title)->first();
 
+            /**
+             * Check if there's another book with the same title
+             */
+            if ($book) {
+                return \response(['error' => "Title already in the store"], 400, []);
+            }
+
+            /**
+             * Check if there's title on the request to change only title
+             */
+            if ($request->title)
+            {
+                $book->title = $request->title;
+                $book->update();
+
+                return new BookResource($book);
+            }
+        }
+
+        /**
+         * Adding another copy to book
+         */
         $bookCount = $book->unit;
         $bookCount++;
 

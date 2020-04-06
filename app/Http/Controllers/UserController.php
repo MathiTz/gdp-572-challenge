@@ -107,8 +107,61 @@ class UserController extends Controller
             return \response(['error' => 'Please fill at least one of the fields'], 400, []);
         }
 
+        /**
+         * Checking if has parameter name
+         */
         if ($request->name) $user->name = $request->name;
-        if ($request->email) $user->email = $request->email;
+
+        /**
+         * Checking if has parameter name
+         */
+        if ($request->email) {
+            /**
+             * Checking if email is already in the database
+             */
+            $user = User::where('email', $request->email)->first();
+
+            if ($user) {
+                return \response(['error' => 'Email already in the database'], 400, []);
+            }
+
+            /**
+             * If the email is not on the database then
+             */
+            if ($request->email)
+            {
+                /**
+                 * Find user
+                 */
+                $user = User::find($id);
+
+                /**
+                 * Check if has parameter name
+                 */
+                if ($request->name) $user->name = $request->name;
+
+                /**
+                 * Checking if has parameter password
+                 */
+                if ($request->password) $user->password = $request->password;
+
+                /**
+                 * Update field email
+                 */
+                $user->email = $request->email;
+
+                /**
+                 * Update user
+                 */
+                $user->update();
+
+                return new UserResource($user);
+            }
+        }
+
+        /**
+         * Checking if has parameter password
+         */
         if ($request->password) $user->password = $request->password;
 
         $user->update();
