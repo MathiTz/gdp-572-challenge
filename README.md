@@ -45,7 +45,7 @@
         <p>Email: admin@atlantico.com, password: 123456</p>
     </li>
     <li>
-        <p>And run -php artisan serve - </p>
+        <p>And run - php artisan serve - </p>
     </li>
     <li>
         <p>Just make sure you have made through all the steps</p>
