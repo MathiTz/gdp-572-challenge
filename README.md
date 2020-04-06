@@ -84,7 +84,7 @@
 </h3>
 <ul>
     <li>
-        <h3>'user' - GET (Code: 200)</h3>
+        <h3>'user' - GET</h3>
         <p>Retrieves all users:</p>
         <h4>
             {
@@ -97,7 +97,7 @@
               ]
             }
         </h4>
-        <h3>'user' - POST (Code: 201)</h3>
+        <h3>'user' - POST</h3>
         <p>Create new User:</p>
         <p>Body:</p>
         <h4>
@@ -118,7 +118,7 @@
              }
            }
         </h4>
-        <h3>'user/$id' - PUT (Code: 200)</h3>
+        <h3>'user/$id' - PUT</h3>
         <p>Update User:</p>
         <p>Body:</p>
         <h4>
@@ -139,7 +139,7 @@
              }
            }
         </h4>
-        <h3>'user/$id' - DELETE (Code: 200)</h3>
+        <h3>'user/$id' - DELETE</h3>
         <p>Delete User:</p>
         <h4>
            {
@@ -158,7 +158,7 @@
 </h3>
 <ul>
     <li>
-        <h3>'book' - GET (Code: 200)</h3>
+        <h3>'book' - GET</h3>
         <p>Retrieves all books:</p>
         <p>Response:</p>
         <h4>
@@ -177,7 +177,7 @@
               ]
             }
         </h4>
-        <h3>'book' - POST (Code: 201)</h3>
+        <h3>'book' - POST</h3>
         <p>Create new Book:</p>
         <p>Body:</p>
         <h4>
@@ -196,7 +196,7 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT (Code: 200)</h3>
+        <h3>'book/$id' - PUT</h3>
         <p>Update Book:</p>
         <p>Body:</p>
         <h4>
@@ -222,7 +222,7 @@
              }
            }
         </h4>
-        <h3>'book/$id' - DELETE (Code: 200)</h3>
+        <h3>'book/$id' - DELETE</h3>
         <p>Delete Book:</p>
         <h4>
            {
@@ -240,7 +240,7 @@
 </h3>
 <ul>
     <li>
-        <h3>'rented_books' - GET (Code: 200)</h3>
+        <h3>'rented_books' - GET</h3>
         <p>Retrieves all rented books:</p>
         <p>Response:</p>
         <h4>
@@ -265,7 +265,7 @@
               ]
             }
         </h4>
-        <h3>'rented_books' - POST (Code: 201)</h3>
+        <h3>'rented_books' - POST</h3>
         <p>Create new Rent for a book:</p>
         <p>Body:</p>
         <h4>
@@ -293,7 +293,7 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT (Code: 200)</h3>
+        <h3>'book/$id' - PUT</h3>
         <p>Update Book:</p>
         <p>Body:</p>
         <h4>
