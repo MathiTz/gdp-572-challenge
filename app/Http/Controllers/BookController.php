@@ -104,6 +104,7 @@ class BookController extends Controller
              */
             if ($request->title)
             {
+                $book = Book::find($id);
                 $book->title = $request->title;
                 $book->update();
 
