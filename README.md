@@ -85,6 +85,7 @@
     </li>
 </ul>
 <h4>Note: now you have to use auth after "api/", so all routes from now on, are going to be 'api/auth/'</h4>
+<p> Example: <b> "api/auth/user", "/api/auth/book", "api/auth/rented_books" </b> </p>
 
 <h3>
     Next one is <b>User</b>
