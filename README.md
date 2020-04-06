@@ -1,6 +1,8 @@
 <h2> Welcome to Atlantico's Library! </h2>
 
 <p> This application runs on PHP 7.2.5 <p>
+    
+<p> About the code: This application is about users looking for awesome books to rent. The flow is simple, you can access, create a book, and rent it. The choose of using Laravel Framework 7.0 was based on my previous knowledge and I did use JWT Auth library for authentication. </p>
 
 <p>
     Here you can find some books to rent with promotional price! 
