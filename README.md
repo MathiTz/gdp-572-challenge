@@ -68,7 +68,7 @@
         <p>You have to enter the following JSON body:</p>
         <h4>
             {
-                "username":"admin@atlantico.com",
+                "email":"admin@atlantico.com",
                 "password":"123456"
             }
         </h4>
