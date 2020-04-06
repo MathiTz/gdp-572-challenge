@@ -8,6 +8,9 @@
     Here you can find some books to rent with promotional price! 
 </p>
 
+<p> This is the link to use online: https://rent-store.herokuapp.com/api </p>
+<h4> Note: read all the routes to full performance </h4>
+
 <p>
     Here we have the following routes
 </p>
