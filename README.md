@@ -1,8 +1,15 @@
 <h2> Welcome to Atlantico's Library! </h2>
 
+<p> This application runs on PHP 7.2.5 <p>
+    
+<p> About the code: This application is about users looking for awesome books to rent. The flow is simple, you can access, create a book, and rent it. The choose of using Laravel Framework 7.0 was based on my previous knowledge and I did use JWT Auth library for authentication. </p>
+
 <p>
     Here you can find some books to rent with promotional price! 
 </p>
+
+<p> This is the link to use online: https://rent-store.herokuapp.com/api </p>
+<h4> Note: read all the routes to full performance </h4>
 
 <p>
     Here we have the following routes
@@ -24,6 +31,9 @@
 <h2> To start the application you have to take some steps </h2>
 <ul>
     <li>
+        <p>Run - sudo composer install - to install the dependencies</p>
+    </li>
+    <li>
         <p>Make a copy of .env.example and renamed to .env</p>
     </li>
     <li>
@@ -35,9 +45,6 @@
         <p>Run - php artisan jwt:secret - to set env jwt secret or you can access .env and set JWT_SECRET with your own secret</p>
     </li>
     <li>
-        <p>Run - sudo composer install - to install the dependencies</p>
-    </li>
-    <li>
         <p>Run - php artisan migrate - to create all the tables</p>
     </li>
     <li>
@@ -45,7 +52,7 @@
         <p>Email: admin@atlantico.com, password: 123456</p>
     </li>
     <li>
-        <p>And run -php artisan serve - </p>
+        <p>And run - php artisan serve - </p>
     </li>
     <li>
         <p>Just make sure you have made through all the steps</p>
@@ -61,7 +68,7 @@
         <p>You have to enter the following JSON body:</p>
         <h4>
             {
-                "username":"admin@atlantico.com",
+                "email":"admin@atlantico.com",
                 "password":"123456"
             }
         </h4>
@@ -78,13 +85,14 @@
     </li>
 </ul>
 <h4>Note: now you have to use auth after "api/", so all routes from now on, are going to be 'api/auth/'</h4>
+<p> Example: <b> "api/auth/user", "/api/auth/book", "api/auth/rented_books" </b> </p>
 
 <h3>
     Next one is <b>User</b>
 </h3>
 <ul>
     <li>
-        <h3>'user' - GET (Code: 200)</h3>
+        <h3>'user' - GET</h3>
         <p>Retrieves all users:</p>
         <h4>
             {
@@ -97,7 +105,7 @@
               ]
             }
         </h4>
-        <h3>'user' - POST (Code: 201)</h3>
+        <h3>'user' - POST</h3>
         <p>Create new User:</p>
         <p>Body:</p>
         <h4>
@@ -118,7 +126,7 @@
              }
            }
         </h4>
-        <h3>'user/$id' - PUT (Code: 200)</h3>
+        <h3>'user/$id' - PUT</h3>
         <p>Update User:</p>
         <p>Body:</p>
         <h4>
@@ -139,15 +147,11 @@
              }
            }
         </h4>
-        <h3>'user/$id' - DELETE (Code: 200)</h3>
+        <h3>'user/$id' - DELETE</h3>
         <p>Delete User:</p>
         <h4>
            {
-             "data": {
-               "id": 3,
-               "name": "Matt",
-               "email": "matheusalves789@outlook.com"
-             }
+            "success": "User deleted"
            }
         </h4>
     </li>
@@ -158,7 +162,7 @@
 </h3>
 <ul>
     <li>
-        <h3>'book' - GET (Code: 200)</h3>
+        <h3>'book' - GET</h3>
         <p>Retrieves all books:</p>
         <p>Response:</p>
         <h4>
@@ -177,7 +181,7 @@
               ]
             }
         </h4>
-        <h3>'book' - POST (Code: 201)</h3>
+        <h3>'book' - POST</h3>
         <p>Create new Book:</p>
         <p>Body:</p>
         <h4>
@@ -196,7 +200,7 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT (Code: 200)</h3>
+        <h3>'book/$id' - PUT</h3>
         <p>Update Book:</p>
         <p>Body:</p>
         <h4>
@@ -222,15 +226,11 @@
              }
            }
         </h4>
-        <h3>'book/$id' - DELETE (Code: 200)</h3>
+        <h3>'book/$id' - DELETE</h3>
         <p>Delete Book:</p>
         <h4>
            {
-             "data": {
-               "id": 3,
-               "title": "JS for dummies",
-               "count": 3
-             }
+            "success": "Book deleted"
            }
         </h4>
     </li>
@@ -240,32 +240,24 @@
 </h3>
 <ul>
     <li>
-        <h3>'rented_books' - GET (Code: 200)</h3>
+        <h3>'rented_books' - GET</h3>
         <p>Retrieves all rented books:</p>
         <p>Response:</p>
         <h4>
             {
               "data": [
                 {
-                  "id": 2,
-                  "user_id": 1,
-                  "book_id": 1,
-                  "payment_value": "R$ 4,50",
-                  "rent_expiration_date": "2020-04-08",
-                  "status": "paid"
-                },
-                {
-                  "id": 3,
-                  "user_id": 1,
-                  "book_id": 1,
-                  "payment_value": "R$ 4,50",
-                  "rent_expiration_date": "2020-04-08",
-                  "status": "paid"
+                  "id": 4,
+                  "user_id": 3,
+                  "book_id": 3,
+                  "payment_value": "R$ 3,50",
+                  "rent_expiration_date": "2020-04-09",
+                  "status": "ongoing"
                 }
               ]
             }
         </h4>
-        <h3>'rented_books' - POST (Code: 201)</h3>
+        <h3>'rented_books' - POST</h3>
         <p>Create new Rent for a book:</p>
         <p>Body:</p>
         <h4>
@@ -275,7 +267,7 @@
             	"payment_value":"4,50"
             }
         </h4>
-        <h4>Note: if you don't pass any payment_value, the default is 3,50. The default value for rent_expiration_date is 3 days.</h4>
+        <h4>Note: if you don't pass any payment_value, the default is 3,50. The default value for rent_expiration_date is 3 days. And if the book has no copies, you won't get the book.</h4>
         <p>Response:</p>
         <h4>
            {
@@ -293,8 +285,8 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT (Code: 200)</h3>
-        <p>Update Book:</p>
+        <h3>'rented_books/$id' - PUT</h3>
+        <p>Update Rent of the book:</p>
         <p>Body:</p>
         <h4>
             * No body needed *
