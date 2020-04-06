@@ -143,11 +143,7 @@
         <p>Delete User:</p>
         <h4>
            {
-             "data": {
-               "id": 3,
-               "name": "Matt",
-               "email": "matheusalves789@outlook.com"
-             }
+            "success": "User deleted"
            }
         </h4>
     </li>
@@ -226,11 +222,7 @@
         <p>Delete Book:</p>
         <h4>
            {
-             "data": {
-               "id": 3,
-               "title": "JS for dummies",
-               "count": 3
-             }
+            "success": "Book deleted"
            }
         </h4>
     </li>
@@ -293,8 +285,8 @@
              }
            }
         </h4>
-        <h3>'book/$id' - PUT</h3>
-        <p>Update Book:</p>
+        <h3>'rented_books/$id' - PUT</h3>
+        <p>Update Rent of the book:</p>
         <p>Body:</p>
         <h4>
             * No body needed *
